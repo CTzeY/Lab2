@@ -13,7 +13,9 @@ def display_main_menu():
 def get_user_input():
     x = input("Enter: ")
     input_list = x.split(",")
+    num_list = list(map(float, input_list))
     num_list = input_list
+    print(num_list)
     return num_list
 def cal_average_temperature(num_list):
     average = sum(num_list)/len(num_list)
@@ -25,8 +27,8 @@ def calc_min_max_temperature(num_list):
     min_value = min(num_list)
     print("Minimum number is " + min_value)
 
-def cal_median_temperature(num_list):
-    sorted_list = sorted(num_list)
+def cal_median_temperature(input_list):
+    sorted_list = sorted(input_list)
     n = len(sorted_list)
     middle = n // 2
     if n % 2 == 0:
